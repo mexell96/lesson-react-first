@@ -1,18 +1,14 @@
 import React from "react";
 
-const element1 = (
-    <h1 className="title">
-        <a href="https://google.com">google</a>
+function App(props) {
+  console.log(props)
+  const style = { color: "green"};
+
+  return (
+    <h1 style={style}>
+      <p>{props.text}</p>
     </h1>
-);
-
-function App() {
-    const style = { color: "green"};
-
-    return <p style={style}>
-        {element1}
-        <a href="https://yandex.by">yandex</a>
-    </p>
+  );
 }
 
 export default App;
