@@ -1,5 +1,5 @@
 import React from "react";
 
-export default ({name}) => {
-  return <div>{name}</div>;
+export default function Site ({number}) {
+  return <div>Counter {number > 5 ? ":)" : number}</div>;
 }

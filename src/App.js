@@ -10,14 +10,14 @@ class App extends React.Component {
   }
 
   handleClick = () => {
-    this.setState((state) => ({ counter: state.counter +1}));
+    this.setState({counter: this.state.counter + 1});
   }
   render () {
+    console.log(this.state);
     return (
       <>
-        <Site name={this.props.text}></Site>
-        <Site name="VK"></Site>
-        <p onClick={this.handleClick}>counter: {this.state.counter}</p>
+        <Site number={this.state.counter}></Site>
+        <button onClick={this.handleClick}>counter</button>
       </>
     );
   }
