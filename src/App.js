@@ -1,14 +1,26 @@
 import React from "react";
+import Site from "./Site";
 
-function App(props) {
-  console.log(props)
-  const style = { color: "green"};
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 0,
+    };
+  }
 
-  return (
-    <h1 style={style}>
-      <p>{props.text}</p>
-    </h1>
-  );
+  handleClick = () => {
+    this.setState((state) => ({ counter: state.counter +1}));
+  }
+  render () {
+    return (
+      <>
+        <Site name={this.props.text}></Site>
+        <Site name="VK"></Site>
+        <p onClick={this.handleClick}>counter: {this.state.counter}</p>
+      </>
+    );
+  }
 }
 
 export default App;
